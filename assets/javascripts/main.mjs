@@ -63,6 +63,9 @@ function parseCoordinates(str) {
  * この関数が最初に実行される
  */
 async function main() {
+  const ansLat = Math.random() * 180 - 90;
+  const ansLng = Math.random() * 360 -180;
+  console.log(ansLat,ansLng);
   // 地図を初期化
   const map = new Y.Map('map');
   drawMap(map, { lat: 35.68227528, lng: 139.73310240 });
