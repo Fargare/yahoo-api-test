@@ -74,6 +74,8 @@ async function main() {
   const sliderZoomControl = new Y.SliderZoomControlVertical();
   map.addControl(sliderZoomControl);
 
+  var circle = new Y.Circle(new Y.LatLng(ansLat,ansLng), new Y.Size(100, 50));
+  ymap.addFeature(circle);
   // 「検索する」ボタンを押したときのアクションを設定する
   document.getElementById('form').onsubmit = () => {
     /** @type {string} テキストボックスの入力内容 */
