@@ -53,6 +53,7 @@ function parseCoordinates(str) {
  * この関数が最初に実行される
  */
 async function main() {
+  //一番上の
   // 地図を初期化
   const map = new Y.Map('map');
   const zoomLevel = 17;
