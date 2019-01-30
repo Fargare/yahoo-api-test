@@ -64,7 +64,7 @@ function parseCoordinates(str) {
  */
 async function main() {
 
-  const ansLat = Math.random() * 180 - 90;
+  const ansLat = Math.random() * 170 - 85;
   const ansLng = Math.random() * 360 -180;
   console.log(ansLat,ansLng);
   // 地図を初期化
