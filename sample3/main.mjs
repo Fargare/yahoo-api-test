@@ -80,7 +80,7 @@ async function main() {
       strokeStyle: strokeStyle,
       fillStyle:fillStyle
   });
-  ymap.addFeature(circle);
+  map.addFeature(circle);
   // 「検索する」ボタンを押したときのアクションを設定する
   document.getElementById('form').onsubmit = () => {
     /** @type {string} テキストボックスの入力内容 */
