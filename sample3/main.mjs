@@ -108,6 +108,7 @@ async function main() {
   document.getElementById('search').onsubmit = () => {
     const center = ymap.getCenter();
     console.log(center);
+    return false;
   }
 }
 
