@@ -36,6 +36,19 @@ async function requestGeoCoderAPI(query) {
   console.log(JSON.stringify(data, undefined, 2));
   return data.ResultInfo.Count > 0 ? data.Feature : [];
 }
+async function requestDistanceAPI(coordinates) {
+  const response = await axios({
+    url: 'https://gleaming7moonlight29-eval-test.apigee.net/yahoo_map/dist/V1/distance',
+    params: {
+      coordinates,
+      output: 'json',
+    },
+  });
+  const { data } = response;
+  // APIから受け取った内容をコンソールに表示
+  console.log(JSON.stringify(data, undefined, 2));
+  return data.ResultInfo.Count > 0 ? data.Feature : [];
+}
 
 /**
  * マップの中心を指定した位置情報に移動する
@@ -107,6 +120,11 @@ async function main() {
   };
   document.getElementById('search').onsubmit = () => {
     const center = map.getCenter();
+    (async () => {
+      const coordinates = ansLat + ","+  ansLng + " " + center.Lat +',' +center.Lng
+      const distance = await requestDistanceAPI(coordinates);
+      console.log(distance);
+    })
     console.log(center);
     return false;
   }
