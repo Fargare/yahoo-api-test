@@ -73,8 +73,13 @@ async function main() {
   // コントロールの追加
   const sliderZoomControl = new Y.SliderZoomControlVertical();
   map.addControl(sliderZoomControl);
-
-  var circle = new Y.Circle(new Y.LatLng(ansLat,ansLng), new Y.Size(100, 50));
+  var strokeStyle = new Y.Style("00ff00", 4, 0.7);
+  var fillStyle   = new Y.Style("00ff00", null, 0.2);
+  var circle = new Y.Circle(new Y.LatLng(ansLat,ansLng), new Y.Size(100, 100), {
+      unit:"km",
+      strokeStyle: strokeStyle,
+      fillStyle:fillStyle
+  });
   ymap.addFeature(circle);
   // 「検索する」ボタンを押したときのアクションを設定する
   document.getElementById('form').onsubmit = () => {
