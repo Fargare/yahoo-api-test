@@ -125,8 +125,6 @@ async function main() {
       const coordinates = ansLat + ","+  ansLng + " " + center.Lat +',' +center.Lng
       const distance = await requestDistanceAPI(coordinates);
       console.log(distance);
-      const label = new Y.Label(new Y.LatLng(lct.lat, lct.lng), first.Name);
-        map.addFeature(label);
     })
     console.log(center);
     return false;
