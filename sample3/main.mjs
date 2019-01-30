@@ -73,8 +73,8 @@ async function main() {
   // コントロールの追加
   const sliderZoomControl = new Y.SliderZoomControlVertical();
   map.addControl(sliderZoomControl);
-  var strokeStyle = new Y.Style("00ff00", 4, 0.7);
-  var fillStyle   = new Y.Style("00ff00", null, 0.2);
+  var strokeStyle = new Y.Style("00ff00", 10, 0.7);
+  var fillStyle   = new Y.Style("00ff00", null, 1.0);
   var circle = new Y.Circle(new Y.LatLng(ansLat,ansLng), new Y.Size(100, 100), {
       unit:"km",
       strokeStyle: strokeStyle,
