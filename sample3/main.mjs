@@ -44,7 +44,7 @@ async function requestDistanceAPI(coordinates) {
       output: 'json',
     },
   });
-  console.log(response);
+  // console.log(response);
   const { data } = response;
   // APIから受け取った内容をコンソールに表示
   console.log(JSON.stringify(data, undefined, 2));
@@ -123,10 +123,9 @@ async function main() {
     const center = map.getCenter();
     (async () => {
       const coordinates = ansLat + ","+  ansLng + "%20" + center.Lat +',' +center.Lng;
-      console.log(coordinates);
       const distance = await requestDistanceAPI(coordinates);
       console.log(distance);
-    })
+    })();
     console.log(center);
     return false;
   }
