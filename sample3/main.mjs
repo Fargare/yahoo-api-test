@@ -106,7 +106,7 @@ async function main() {
     return false;
   };
   document.getElementById('search').onsubmit = () => {
-    const center = ymap.getCenter();
+    const center = map.getCenter();
     console.log(center);
     return false;
   }
