@@ -101,13 +101,14 @@ async function main() {
         resultText.textContent = '正しい住所を入力してください';
       }
     })();
-    document.getElementById('search').onsubmit = () => {
-      const center = ymap.getCenter();
-      console.log(center);
-    }
+    
     // 戻り値をfalseにして、formのsubmitが常に成功しないようにする
     return false;
   };
+  document.getElementById('search').onsubmit = () => {
+    const center = ymap.getCenter();
+    console.log(center);
+  }
 }
 
 main();
