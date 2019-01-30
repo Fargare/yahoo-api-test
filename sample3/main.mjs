@@ -78,8 +78,8 @@ function parseCoordinates(str) {
  */
 async function main() {
 
-  const ansLat = Math.random() * 170 - 85;
-  const ansLng = Math.random() * 360 -180;
+  const ansLat = Math.floor(Math.random() * 170 - 85);
+  const ansLng = Math.floor(Math.random() * 360 -180);
   console.log(ansLat,ansLng);
   // 地図を初期化
   const map = new Y.Map('map');
