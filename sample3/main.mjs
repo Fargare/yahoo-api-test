@@ -122,7 +122,8 @@ async function main() {
   document.getElementById('search').onsubmit = () => {
     const center = map.getCenter();
     (async () => {
-      const coordinates = ansLat + ","+  ansLng + "%20" + center.Lat +',' +center.Lon;
+      // const coordinates =  + ","+  ansLng + "+" + center.Lat +',' +center.Lon;
+      const coordinates = `${ansLat},${ansLng}+${center.Lat},${center.Lon}`;
       const distance = await requestDistanceAPI(coordinates);
       console.log(distance);
     })();
