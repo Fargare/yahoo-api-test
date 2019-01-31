@@ -123,7 +123,7 @@ async function main() {
     const center = map.getCenter();
     (async () => {
       // const coordinates =  + ","+  ansLng + "+" + center.Lat +',' +center.Lon;
-      const coordinates = `${ansLat},${ansLng}+${center.Lat},${center.Lon}`;
+      const coordinates = `${ansLat},${ansLng} ${center.Lat},${center.Lon}`;
       const distance = await requestDistanceAPI(coordinates);
       console.log(distance);
     })();
